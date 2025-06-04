@@ -1,0 +1,7 @@
+export {default as AuthLogin} from "./login"
+export {default as SelectRole} from "./SelectRole"
+export {default as ChangePassword} from "./ChangePassword"
+export {default as VerifyAccount} from "./VerifyAccount"
+export {default as RegisterTourist} from "./RegisterTourist"
+export {default as RegisterStore} from "./RegisterStore"
+export {default as SendEmail} from "./EmailForgetPassword"
