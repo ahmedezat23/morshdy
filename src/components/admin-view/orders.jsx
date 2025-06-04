@@ -14,7 +14,7 @@ const [modalType, setModalType] = useState(null); // "view" or "payment"
 
   const fetchOrders = async () => {
     try {
-      const res = await axios.get(`http://localhost:3000/api/v1/orders`, {
+      const res = await axios.get(`https://morshdy-api.vercel.app/api/v1/orders`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       console.log(res.data);
@@ -164,7 +164,7 @@ const [modalType, setModalType] = useState(null); // "view" or "payment"
             onClick={async () => {
               try {
                 await axios.put(
-                  `http://localhost:3000/api/v1/admin/mark-store-paid/${selectedOrder._id}`,
+                  `https://morshdy-api.vercel.app/api/v1/admin/mark-store-paid/${selectedOrder._id}`,
                   {},
                   { headers: { Authorization: `Bearer ${token}` } }
                 );

@@ -11,7 +11,7 @@ const ShoppingCheckout = () => {
 
   const fetchCartItems = async () => {
     try {
-      const res = await fetch("http://localhost:3000/api/v1/cart", {
+      const res = await fetch("https://morshdy-api.vercel.app/api/v1/cart", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -34,7 +34,7 @@ const ShoppingCheckout = () => {
   const updateQuantity = async (productId, quantity) => {
     if (quantity < 1) return;
     try {
-      await fetch(`http://localhost:3000/api/v1/cart/update`, {
+      await fetch(`https://morshdy-api.vercel.app/api/v1/cart/update`, {
         method: "PATCH",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -50,7 +50,7 @@ const ShoppingCheckout = () => {
 
   const deleteItem = async (productId) => {
     try {
-      await fetch(`http://localhost:3000/api/v1/cart`, {
+      await fetch(`https://morshdy-api.vercel.app/api/v1/cart`, {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -75,7 +75,7 @@ const handleOrderSubmit = async () => {
 
     const total = cartItems.reduce((acc, item) => acc + item.productId.price * item.quantity, 0);
 
-    const res = await fetch("http://localhost:3000/api/v1/orders", {
+    const res = await fetch("https://morshdy-api.vercel.app/api/v1/orders", {
       method: "POST",
       headers: {
         "Authorization": `Bearer ${token}`,

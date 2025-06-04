@@ -16,7 +16,7 @@ const ShoppingHeader = () => {
   useEffect(() => {
     const fetchCartItems = async () => {
       try {
-        const res = await fetch('http://localhost:3000/api/v1/cart', {
+        const res = await fetch('https://morshdy-api.vercel.app/api/v1/cart', {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -57,7 +57,7 @@ const ShoppingHeader = () => {
   const updateQuantity = async (productId, quantity) => {
     if (quantity < 1) return;
     try {
-      await fetch(`http://localhost:3000/api/v1/cart/update`, {
+      await fetch(`https://morshdy-api.vercel.app/api/v1/cart/update`, {
         method: 'PATCH',
         headers: {
           "Authorization": `Bearer ${token}`,
@@ -72,7 +72,7 @@ const ShoppingHeader = () => {
 
   const deleteItem = async (productId) => {
     try {
-      await fetch(`http://localhost:3000/api/v1/cart/`, {
+      await fetch(`https://morshdy-api.vercel.app/api/v1/cart/`, {
         method: 'PUT',
         headers: {
           "Authorization": `Bearer ${token}`,
@@ -87,7 +87,7 @@ const ShoppingHeader = () => {
 
   const clearCart = async () => {
     try {
-      await fetch(`http://localhost:3000/api/v1/cart/clear`, {
+      await fetch(`https://morshdy-api.vercel.app/api/v1/cart/clear`, {
         method: 'DELETE',
         headers: {
           "Authorization": `Bearer ${token}`

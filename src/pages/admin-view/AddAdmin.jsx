@@ -27,7 +27,7 @@ function AddAdmin() {
     try {
       const token = localStorage.getItem("token");
 
-      const res = await fetch("http://localhost:3000/api/v1/admin", {
+      const res = await fetch("https://morshdy-api.vercel.app/api/v1/admin", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

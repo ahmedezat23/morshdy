@@ -12,7 +12,7 @@ function CategoryManager() {
 
   const fetchCategories = async () => {
     try {
-      const res = await fetch("http://localhost:3000/api/v1/category", {
+      const res = await fetch("https://morshdy-api.vercel.app/api/v1/category", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -35,8 +35,8 @@ function CategoryManager() {
     setLoading(true);
 
     const url = editId
-      ? `http://localhost:3000/api/v1/category/${editId}`
-      : "http://localhost:3000/api/v1/category";
+      ? `https://morshdy-api.vercel.app/api/v1/category/${editId}`
+      : "https://morshdy-api.vercel.app/api/v1/category";
     const method = editId ? "PUT" : "POST";
 
     try {
@@ -75,7 +75,7 @@ function CategoryManager() {
     if (!window.confirm("Are you sure you want to delete this category?")) return;
 
     try {
-      const res = await fetch(`http://localhost:3000/api/v1/category/${id}`, {
+      const res = await fetch(`https://morshdy-api.vercel.app/api/v1/category/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -135,7 +135,6 @@ function CategoryManager() {
               <th className="px-4 py-2 border">#</th>
               <th className="px-4 py-2 border">Name</th>
               <th className="px-4 py-2 border">Description</th>
-              <th className="px-4 py-2 border">User</th>
               <th className="px-4 py-2 border">Actions</th>
             </tr>
           </thead>
@@ -145,7 +144,6 @@ function CategoryManager() {
                 <td className="px-4 py-2 border">{idx + 1}</td>
                 <td className="px-4 py-2 border">{cat.name}</td>
                 <td className="px-4 py-2 border">{cat.description}</td>
-                <td className="px-4 py-2 border">{cat.userName}</td>
                 <td className="px-4 py-2 border space-x-2 flex justify-center">
                   <button
                     onClick={() => handleEdit(cat)}

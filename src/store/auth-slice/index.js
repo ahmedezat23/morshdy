@@ -28,7 +28,7 @@ export const loginUser = createAsyncThunk(
 
   async (formData) => {
     const response = await axios.post(
-      "http://localhost:3000/api/v1/auth/login",
+      "https://morshdy-api.vercel.app/api/v1/auth/login",
       formData,
       {
         withCredentials: true,

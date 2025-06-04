@@ -16,7 +16,7 @@ function EmailForgetPassword() {
 
     try {
       // إرسال البريد الإلكتروني (ملاحظة: استخدم API حقيقي هنا)
-      const res = await fetch("http://localhost:3000/api/v1/auth/send-otp", {
+      const res = await fetch("https://morshdy-api.vercel.app/api/v1/auth/send-otp", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

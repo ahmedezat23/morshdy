@@ -63,7 +63,7 @@ export default function RegisterStore() {
     formData.append("longitude", mapLocation.lng);
 
     try {
-      const response = await fetch("http://localhost:3000/api/v1/shop", {
+      const response = await fetch("https://morshdy-api.vercel.app/api/v1/shop", {
         method: "POST",
         body: formData
       });

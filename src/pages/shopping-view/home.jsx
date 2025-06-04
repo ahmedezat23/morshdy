@@ -18,7 +18,7 @@ function ShoppingHome() {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const res = await fetch("http://localhost:3000/api/v1/category", {
+        const res = await fetch("https://morshdy-api.vercel.app/api/v1/category", {
           headers: { Authorization: `Bearer ${token}` },
         });
         const data = await res.json();
@@ -28,7 +28,7 @@ function ShoppingHome() {
       }
     };
     const fetchAllProducts = async () => {
-      const res = await fetch("http://localhost:3000/api/v1/product", {
+      const res = await fetch("https://morshdy-api.vercel.app/api/v1/product", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();

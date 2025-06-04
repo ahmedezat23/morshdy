@@ -10,7 +10,7 @@ function StoreFeedback() {
 
   const fetchReviews = async () => {
     try {
-      const res = await axios.get(`http://localhost:3000/api/v1/review/shop/${user._id}`, {
+      const res = await axios.get(`https://morshdy-api.vercel.app/api/v1/review/shop/${user._id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       console.log(res.data.data);
@@ -26,7 +26,7 @@ function StoreFeedback() {
   const handleVerify = async (reviewId, status) => {
     try {
       await axios.put(
-        `http://localhost:3000/api/v1/review/${reviewId}/verify`,
+        `https://morshdy-api.vercel.app/api/v1/review/${reviewId}/verify`,
         { verified: status },
         { headers: { Authorization: `Bearer ${token}` } }
       );

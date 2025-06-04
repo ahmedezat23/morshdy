@@ -28,7 +28,7 @@ function ChangePassword() {
       setServerMsg('');
       setError('');
       try {
-        const response = await axios.put('http://localhost:3000/api/v1/auth/forget-password', {
+        const response = await axios.put('https://morshdy-api.vercel.app/api/v1/auth/forget-password', {
           email,
           otp: values.otp,
           newPassword: values.newPassword

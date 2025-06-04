@@ -18,8 +18,8 @@ function AdminDashboard() {
         };
   
         const [adminsRes, users] = await Promise.all([
-          axios.get('http://localhost:3000/api/v1/admin/statistics', config),
-          axios.get('http://localhost:3000/api/v1/user', config)
+          axios.get('https://morshdy-api.vercel.app/api/v1/admin/statistics', config),
+          axios.get('https://morshdy-api.vercel.app/api/v1/user', config)
         ]);
         console.log(users.data.data);
         

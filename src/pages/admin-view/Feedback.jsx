@@ -9,7 +9,7 @@ function FeedbackManager() {
 
   const fetchReviews = async () => {
     try {
-      const res = await fetch(`http://localhost:3000/api/v1/review`, {
+      const res = await fetch(`https://morshdy-api.vercel.app/api/v1/review`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -25,7 +25,7 @@ function FeedbackManager() {
 
   const handleAccept = async (id) => {
     try {
-      const res = await fetch(`http://localhost:3000/api/v1/review/${id}/verify`, {
+      const res = await fetch(`https://morshdy-api.vercel.app/api/v1/review/${id}/verify`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -48,7 +48,7 @@ function FeedbackManager() {
   // const handleReject = async (id) => {
   //   if (!window.confirm("Are you sure you want to reject this review?")) return;
   //   try {
-  //     const res = await fetch(`http://localhost:3000/api/v1/review/${id}`, {
+  //     const res = await fetch(`https://morshdy-api.vercel.app/api/v1/review/${id}`, {
   //       method: "DELETE",
   //       headers: { Authorization: `Bearer ${token}` },
   //     });

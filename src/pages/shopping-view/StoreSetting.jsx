@@ -25,7 +25,7 @@ function StoreSetting() {
 
   const fetchStoreData = async () => {
     try {
-      const res = await axios.get(`http://localhost:3000/api/v1/shop/${user._id}`, {
+      const res = await axios.get(`https://morshdy-api.vercel.app/api/v1/shop/${user._id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setStoreData(res.data.data);
@@ -46,7 +46,7 @@ function StoreSetting() {
 
   const handleUpdateStore = async () => {
     try {
-      await axios.put(`http://localhost:3000/api/v1/shop/${user._id}`, storeData, {
+      await axios.put(`https://morshdy-api.vercel.app/api/v1/shop/${user._id}`, storeData, {
         headers: { Authorization: `Bearer ${token}` },
       });
       toast.success("Store updated successfully");
@@ -73,7 +73,7 @@ function StoreSetting() {
     }
 
     try {
-      await axios.put(`http://localhost:3000/api/v1/shop/${user._id}/change-password`, {
+      await axios.put(`https://morshdy-api.vercel.app/api/v1/shop/${user._id}/change-password`, {
         currentPassword,
         newPassword
       }, {

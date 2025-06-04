@@ -18,7 +18,7 @@ function SettingsPage() {
 
   const getUser = async () => {
     try {
-      const res = await fetch(`http://localhost:3000/api/v1/user/current-user`, {
+      const res = await fetch(`https://morshdy-api.vercel.app/api/v1/user/current-user`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -31,7 +31,7 @@ function SettingsPage() {
 
   const getProfit = async () => {
     try {
-      const res = await fetch('http://localhost:3000/api/v1/profit', {
+      const res = await fetch('https://morshdy-api.vercel.app/api/v1/profit', {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -46,7 +46,7 @@ function SettingsPage() {
 
   const handleUserUpdate = async () => {
     try {
-      const res = await fetch(`http://localhost:3000/api/v1/user/${user.id}`, {
+      const res = await fetch(`https://morshdy-api.vercel.app/api/v1/user/${user.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -66,7 +66,7 @@ function SettingsPage() {
 
   const handlePasswordReset = async () => {
     try {
-      const res = await fetch(`http://localhost:3000/api/v1/user/reast-password`, {
+      const res = await fetch(`https://morshdy-api.vercel.app/api/v1/user/reast-password`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -84,7 +84,7 @@ function SettingsPage() {
 
   const handleProfitUpdate = async () => {
     try {
-      const res = await fetch('http://localhost:3000/api/v1/profit', {
+      const res = await fetch('https://morshdy-api.vercel.app/api/v1/profit', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

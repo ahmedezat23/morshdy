@@ -24,7 +24,7 @@ const [showEditModal, setShowEditModal] = useState(false);
 
   const fetchProducts = async () => {
     try {
-      const res = await axios.get(`http://localhost:3000/api/v1/shop/products/${user._id}`,{
+      const res = await axios.get(`https://morshdy-api.vercel.app/api/v1/shop/products/${user._id}`,{
         headers: { Authorization: `Bearer ${token}` },
       });
       setProducts(res.data.products);
@@ -35,7 +35,7 @@ const [showEditModal, setShowEditModal] = useState(false);
 
   const fetchCount = async () => {
     try {
-      const res = await axios.get(`http://localhost:3000/api/v1/shop/products/${user._id}/count`,{
+      const res = await axios.get(`https://morshdy-api.vercel.app/api/v1/shop/products/${user._id}/count`,{
         headers: { Authorization: `Bearer ${token}` },
       });
       setCount(res.data.count);
@@ -46,7 +46,7 @@ const [showEditModal, setShowEditModal] = useState(false);
 
   const fetchCategories = async () => {
     try {
-      const res = await axios.get('http://localhost:3000/api/v1/category',{
+      const res = await axios.get('https://morshdy-api.vercel.app/api/v1/category',{
         headers: { Authorization: `Bearer ${token}` },
       });
       setCategories(res.data.data);
@@ -57,7 +57,7 @@ const [showEditModal, setShowEditModal] = useState(false);
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:3000/api/v1/product/${selectedProduct._id}`,{
+      await axios.delete(`https://morshdy-api.vercel.app/api/v1/product/${selectedProduct._id}`,{
         headers: { Authorization: `Bearer ${token}` },
       });
       toast.success("Product deleted successfully");
@@ -78,7 +78,7 @@ const [showEditModal, setShowEditModal] = useState(false);
       console.log(formData);
       
 
-      await axios.post(`http://localhost:3000/api/v1/product/${user._id}`, payload,{
+      await axios.post(`https://morshdy-api.vercel.app/api/v1/product/${user._id}`, payload,{
         headers: { Authorization: `Bearer ${token}` },
       });
       toast.success("Product added successfully");
@@ -105,7 +105,7 @@ const handleSubmitEditProduct = async () => {
       ...formData,
       price: Number(formData.price),
     };
-    await axios.put(`http://localhost:3000/api/v1/product/${selectedProduct._id}`, payload, {
+    await axios.put(`https://morshdy-api.vercel.app/api/v1/product/${selectedProduct._id}`, payload, {
       headers: { Authorization: `Bearer ${token}` },
     });
     toast.success("Product updated successfully");

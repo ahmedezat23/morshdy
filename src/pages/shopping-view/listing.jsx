@@ -16,14 +16,14 @@ const ProductFilterPage = () => {
 
   useEffect(() => {
     // جلب التصنيفات
-    fetch("http://localhost:3000/api/v1/category", {
+    fetch("https://morshdy-api.vercel.app/api/v1/category", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then(res => res.json())
       .then(data => setCategories(data.data));
 
     // جلب كل المنتجات
-    fetch("http://localhost:3000/api/v1/product", {
+    fetch("https://morshdy-api.vercel.app/api/v1/product", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then(res => res.json())
@@ -47,7 +47,7 @@ const ProductFilterPage = () => {
   console.log(filteredProducts);
     const handleAddtoCart = async (productId) => {
     try {
-      const res = await fetch('http://localhost:3000/api/v1/cart/add', {
+      const res = await fetch('https://morshdy-api.vercel.app/api/v1/cart/add', {
         method: 'POST',
         headers: {
           "Authorization": `Bearer ${token}`,

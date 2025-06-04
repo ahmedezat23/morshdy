@@ -10,7 +10,7 @@ function ShoppingProductTile({ product }) {
 
   const handleAddtoCart = async (productId) => {
     try {
-      const res = await fetch('http://localhost:3000/api/v1/cart/add', {
+      const res = await fetch('https://morshdy-api.vercel.app/api/v1/cart/add', {
         method: 'POST',
         headers: {
           "Authorization": `Bearer ${token}`,

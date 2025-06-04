@@ -30,7 +30,7 @@ function TouristRegister() {
     const payload = { ...formData };
 
     try {
-      const res = await axios.post('http://localhost:3000/api/v1/auth/register', payload, {
+      const res = await axios.post('https://morshdy-api.vercel.app/api/v1/auth/register', payload, {
         headers: {
           'Content-Type': 'application/json',
         },

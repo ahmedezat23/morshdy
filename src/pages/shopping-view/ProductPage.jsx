@@ -18,21 +18,21 @@ const ProductPage = () => {
 
   useEffect(() => {
     // جلب بيانات المنتج
-    fetch(`http://localhost:3000/api/v1/product/${productId}`, {
+    fetch(`https://morshdy-api.vercel.app/api/v1/product/${productId}`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then(res => res.json())
       .then(data => setProduct(data.data));
 
     // جلب التقييمات
-    fetch(`http://localhost:3000/api/v1/review/${productId}`, {
+    fetch(`https://morshdy-api.vercel.app/api/v1/review/${productId}`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then(res => res.json())
       .then(data => setFeedbacks(data.data));
 
     // تحقق اذا المستخدم اشترى المنتج للسماح بالتقييم
-    fetch(`http://localhost:3000/api/v1/orders/checkPurchase?userId=${user._id}&productId=${productId}`, {
+    fetch(`https://morshdy-api.vercel.app/api/v1/orders/checkPurchase?userId=${user._id}&productId=${productId}`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then(res => res.json())
@@ -41,7 +41,7 @@ const ProductPage = () => {
 
   const handleAddtoCart = async (productId) => {
     try {
-      const res = await fetch('http://localhost:3000/api/v1/cart/add', {
+      const res = await fetch('https://morshdy-api.vercel.app/api/v1/cart/add', {
         method: 'POST',
         headers: {
           "Authorization": `Bearer ${token}`,
@@ -70,7 +70,7 @@ const ProductPage = () => {
     }
 
     try {
-      const res = await fetch(`http://localhost:3000/api/v1/review/${productId}`, {
+      const res = await fetch(`https://morshdy-api.vercel.app/api/v1/review/${productId}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -82,7 +82,7 @@ const ProductPage = () => {
       if (!res.ok) throw new Error('Failed to submit feedback');
 
       // تحديث التقييمات
-      const updatedFeedbacks = await fetch(`http://localhost:3000/api/v1/review/${productId}`, {
+      const updatedFeedbacks = await fetch(`https://morshdy-api.vercel.app/api/v1/review/${productId}`, {
         headers: { Authorization: `Bearer ${token}` },
       }).then(res => res.json());
 

@@ -12,7 +12,7 @@ function VerifyAccount() {
     e.preventDefault();
 
     try {
-      await axios.post('http://localhost:3000/api/v1/auth/verify-otp', {
+      await axios.post('https://morshdy-api.vercel.app/api/v1/auth/verify-otp', {
         email,
         otp:otpCode
       },{

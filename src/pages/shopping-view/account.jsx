@@ -17,7 +17,7 @@ const ShoppingAccount = () => {
 
     const fetchOrders = async () => {
       try {
-        const res = await fetch(`http://localhost:3000/api/v1/orders/user`,{
+        const res = await fetch(`https://morshdy-api.vercel.app/api/v1/orders/user`,{
       headers: {
         "Authorization": `Bearer ${token}`,
       }
@@ -42,7 +42,7 @@ const ShoppingAccount = () => {
     try {
       const token = localStorage.getItem("token");
 
-      const res = await fetch(`http://localhost:3000/api/v1/users`, {
+      const res = await fetch(`https://morshdy-api.vercel.app/api/v1/users`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
